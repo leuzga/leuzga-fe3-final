@@ -1,0 +1,1 @@
+import{r as t,T as s,j as e}from"./index-DSZF2te1.js";const r=()=>(t.useContext(s),e.jsx(e.Fragment,{children:e.jsx("div",{className:"content-page-detail",style:{marginTop:"70px"},children:e.jsx("h1",{children:"Detail Dentist id "})})}));export{r as default};
