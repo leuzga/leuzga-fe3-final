@@ -1,0 +1,80 @@
+.form-container {
+    background-color: rgba(240, 240, 240, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 500px;
+    width: -webkit-fill-available;
+    margin: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*modo dark*/
+.form-container-d {
+    background-color: rgba(66, 66, 66, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 500px;
+    width: -webkit-fill-available;
+    margin: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue
+}
+
+/* Agregar estilo al mensaje de error */
+.error-message {
+    color: red;
+    margin-top: 5px;
+    /* Espacio entre los campos y los mensajes de error */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    text-align: left;
+}
+
+.input-l {
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+}
+
+/* modo dark*/
+.input-d {
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #0d3760;
+}
+
+.btnSubmit {
+    background: linear-gradient(to bottom, #ffd700 0%, #ffb600 100%);
+    /* Degradado amarillo */
+    color: #0d3760;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btnSubmit:hover {
+    background: linear-gradient(to bottom, #ffb600 0%, #ffd700 100%);
+}
+
+h4 {
+    white-space: pre;
+    color: #0d3760;
+}
