@@ -30,7 +30,7 @@ const Card = ({
 
   return (
     <div className={cardTheme}>
-      <Link to='/detail'>
+      <Link to={`/detail/${id}`}>
         <div className='card-content'>
           <div className='card-left'>
             <img src={`https://i.pravatar.cc/150?u=${username}`} alt={name} />
@@ -50,8 +50,7 @@ const Card = ({
           className={isFavorite ? '' : disabledButton}
           disabled={disabled}
         >
-          {messageBtn}{' '}
-          {/* Utilizamos la prop messageBtn para el mensaje del botón */}
+          {messageBtn}
         </button>
       </div>
     </div>

@@ -7,7 +7,7 @@ const Contact = lazy(() => import('./Contact'));
 
 const routes = [
   { path: '/', name: 'Home', Component: Home },
-  { path: '/detail', name: 'Detail', Component: Detail },
+  { path: '/detail/:id', name: 'Detail', Component: Detail },
   { path: '/contact', name: 'Contact', Component: Contact },
   { path: '/favs', name: 'Favs', Component: Favs },
 ];

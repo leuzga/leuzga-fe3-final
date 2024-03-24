@@ -35,12 +35,12 @@ const Home = () => {
     [favorites]
   );
 
-  const handleAddToFavoritesDisabled = useCallback(
-    (user) => {
-      return favorites.some((fav) => fav.id === user.id);
-    },
-    [favorites]
-  );
+  // const handleAddToFavoritesDisabled = useCallback(
+  //   (user) => {
+  //     return favorites.some((fav) => fav.id === user.id);
+  //   },
+  //   [favorites]
+  // );
 
   return (
     <main className='content-page-home' style={{ marginTop: '70px' }}>

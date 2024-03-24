@@ -1,36 +1,19 @@
-import React from 'react';
-
+import logoDH from '../../public/images/DH.png';
+import logofacebook from '../../public/images/ico-facebook.png';
+import logoInstagram from '../../public/images/ico-instagram.png';
+import logoTiktok from '../../public/images/ico-tiktok.png';
+import logoWhatsapp from '../../public/images/ico-whatsapp.png';
 const Footer = () => {
   return (
     <footer>
       <p>Powered by</p>
-      <img src='../../public/images/DH.png' alt='DH-logo' />
+      <img src={logoDH} alt='DH-logo' />
       <br />
       <span className='footer-icons'>
-        <img
-          src='../../public/images/ico-facebook.png'
-          width={24}
-          height={24}
-          alt='icon facebook'
-        />
-        <img
-          src='../../public/images/ico-instagram.png'
-          width={24}
-          height={24}
-          alt='DH-logo'
-        />
-        <img
-          src='../../public/images/ico-tiktok.png'
-          width={24}
-          height={24}
-          alt='DH-logo'
-        />
-        <img
-          src='../../public/images/ico-whatsapp.png'
-          width={24}
-          height={24}
-          alt='DH-logo'
-        />
+        <img src={logofacebook} width={24} height={24} alt='icon facebook' />
+        <img src={logoInstagram} width={24} height={24} alt='DH-logo' />
+        <img src={logoTiktok} width={24} height={24} alt='DH-logo' />
+        <img src={logoWhatsapp} width={24} height={24} alt='DH-logo' />
       </span>
     </footer>
   );

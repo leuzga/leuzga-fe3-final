@@ -15,13 +15,18 @@ const Navbar = () => {
   return (
     <nav>
       <div className={bgNav}>
-        {routes.map(({ path, name }) => (
-          <div key={path}>
-            <Link to={path}>
-              <div className={botonNav}>{name}</div>
-            </Link>
-          </div>
-        ))}
+        {routes.map(({ path, name }) => {
+          if (name !== 'Detail') {
+            return (
+              <div key={path}>
+                <Link to={path}>
+                  <div className={botonNav}>{name}</div>
+                </Link>
+              </div>
+            );
+          }
+          return null;
+        })}
         <button className={themeBtn} onClick={toggleTheme}>
           <img
             src={theme === 'light' ? iconThemeDark : iconThemeLight}

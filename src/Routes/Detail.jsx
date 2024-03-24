@@ -1,6 +1,10 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
+
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
+import { useUserDetailsFromApi } from '../Components/utils/Api';
+import UserTable from '../Components/UserTable';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
@@ -8,6 +12,8 @@ const Detail = () => {
   const { cardContainer } = getClasses(theme);
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
+  const { id } = useParams();
+  const { userDetails, loading, error } = useUserDetailsFromApi(id);
   return (
     <>
       <div className='content-page-detail' style={{ marginTop: '70px' }}>
@@ -15,6 +21,11 @@ const Detail = () => {
       </div>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
+      {!loading && !error && userDetails && (
+        <UserTable userDetails={userDetails} />
+      )}
     </>
   );
 };
