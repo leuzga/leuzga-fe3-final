@@ -11,6 +11,7 @@ const clasesTheme = {
     pTheme: 'pTheme',
     detailContent: 'content-page-detail',
     tableTheme: 'table-l',
+    bgFormContainer: 'containerForm',
   },
   dark: {
     navTheme: 'navbar-dark',
@@ -24,6 +25,7 @@ const clasesTheme = {
     pTheme: 'pTheme-d',
     detailContent: 'content-page-detail-d',
     tableTheme: 'table-d',
+    bgFormContainer: 'containerForm-dark',
   },
 };
 

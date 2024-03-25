@@ -73,3 +73,15 @@
 .btnTheme-dark:hover {
     transform: scale(1.1) rotate(180deg);
 }
+
+.aling-logo {
+    position: absolute;
+    width: 327px;
+    height: 100px;
+    margin-left: 20px;
+    top: 10px;
+    left: 10px;
+    z-index: 9;
+    object-fit: cover;
+    ;
+}

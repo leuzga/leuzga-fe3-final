@@ -4,6 +4,8 @@ import routes from '../Routes/routes';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
+import logoClinicaA from '../../public/images/LogoClinicaA.png';
+import logoClinicaB from '../../public/images/LogoClinicaB.png';
 import iconThemeLight from '../../public/images/eclipse-moon-light.svg';
 import iconThemeDark from '../../public/images/eclipse-moon-dark.svg';
 import './styles/styleNavBar.css';
@@ -15,6 +17,11 @@ const Navbar = () => {
 
   return (
     <nav className={navTheme}>
+      <img
+        className='aling-logo'
+        src={theme === 'light' ? logoClinicaA : logoClinicaB}
+        alt='Logo Clinica Dental'
+      />
       <div className={bgNav}>
         {routes.map(({ path, name }) => {
           if (name !== 'Detail') {

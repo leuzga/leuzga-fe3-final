@@ -6,7 +6,7 @@ import { getClasses } from '../Components/utils/themeUtils';
 function Form() {
   const { theme } = useContext(ThemeContext);
 
-  const { containerForm, inputs } = getClasses(theme);
+  const { bgFormContainer, inputs } = getClasses(theme);
 
   // Estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({
@@ -94,7 +94,7 @@ function Form() {
   const { nombre, email, errorNombre, errorEmail, enviado } = formData;
 
   return (
-    <div className={containerForm}>
+    <div className={bgFormContainer}>
       {enviado ? (
         <>
           <h4>Gracias {nombre}, te contactaremos cuanto antes vía email.</h4>
