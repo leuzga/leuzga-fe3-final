@@ -57,7 +57,8 @@
     border-radius: 5px;
     padding: 8px;
     border: 1px solid #000000;
-    background-color: #0d3760;
+    background-color: #c5c5c5;
+    color: smokewhite;
 }
 
 .btnSubmit {

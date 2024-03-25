@@ -1,6 +1,6 @@
 import { useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
-import './styleCard.css';
+import './styles/styleCard.css';
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ const Card = ({
           <div className='card-right'>
             <h2 className={h2Theme}>{name.trim()}</h2>
             <p className={pTheme}>{username}</p>
-            <p>{website}</p>
+            <p className={pTheme}>{website}</p>
           </div>
         </div>
       </Link>

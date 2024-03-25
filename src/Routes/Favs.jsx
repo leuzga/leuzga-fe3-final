@@ -1,16 +1,13 @@
-import { useContext, useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la navegación
-import { ThemeContext } from '../Contexts/ThemeContext';
-import { getClasses } from '../Components/utils/themeUtils';
+
 import {
   useUsersFromLocalStorage,
   clearLocalStorageFavorites,
 } from '../Components/utils/Api';
 import Card from '../Components/Card';
-
+import '../Components/styles/styleFavs.css';
 const Favs = () => {
-  const { theme } = useContext(ThemeContext);
-  const { cardContainer, botonNav } = getClasses(theme);
   const [favorites, setFavorites] = useState([]);
   const [showMessage, setShowMessage] = useState(false);
   const navigate = useNavigate(); // Instancia de useNavigate para la navegación
@@ -52,7 +49,7 @@ const Favs = () => {
     <div className='content-page-favs' style={{ marginTop: '70px' }}>
       <h1>Dentists Favorites</h1>
       <nav className='alineaBtn'>
-        <button onClick={handleClearLocalStorage} className={botonNav}>
+        <button onClick={handleClearLocalStorage} className='button-favs'>
           Clear Favorites
         </button>
       </nav>
@@ -62,29 +59,25 @@ const Favs = () => {
           principal en 3 segundos...
         </p>
       )}
-      <div className='card-grid'>
-        <div className='content-page-home'>
-          <div className={cardContainer}>
-            {loading && <div>Loading...</div>}
-            {error && <div>Error: {error}</div>}
-            {!loading &&
-              !error &&
-              favorites.map((favorite) => (
-                <div key={favorite.id} className='card-wrapper'>
-                  <Card
-                    id={favorite.id}
-                    name={favorite.name}
-                    username={favorite.username}
-                    website={favorite.website}
-                    onDeleteFromFavorites={handleDeleteFavorites}
-                    isFavorite={true}
-                    messageBtn='Remove from favorites'
-                  />
-                </div>
-              ))}
-          </div>
+
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
+      {!loading && !error && (
+        <div className='cardContainer'>
+          {favorites.map((favorite) => (
+            <Card
+              key={favorite.id}
+              id={favorite.id}
+              name={favorite.name}
+              username={favorite.username}
+              website={favorite.website}
+              onDeleteFromFavorites={handleDeleteFavorites}
+              isFavorite={true}
+              messageBtn='Remove from favorites'
+            />
+          ))}
         </div>
-      </div>
+      )}
     </div>
   );
 };

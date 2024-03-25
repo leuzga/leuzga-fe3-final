@@ -9,23 +9,25 @@ import UserTable from '../Components/UserTable';
 
 const Detail = () => {
   const { theme } = useContext(ThemeContext);
-  const { cardContainer } = getClasses(theme);
+  const { detailContent } = getClasses(theme);
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
   const { id } = useParams();
   const { userDetails, loading, error } = useUserDetailsFromApi(id);
   return (
     <>
-      <div className='content-page-detail' style={{ marginTop: '70px' }}>
-        <h1>Detail Dentist id </h1>
+      <div className={detailContent}>
+        <div style={{ marginTop: '70px' }}>
+          <h1>Detail Dentist id </h1>
+          {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
+          {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+          {loading && <div>Loading...</div>}
+          {error && <div>Error: {error}</div>}
+          {!loading && !error && userDetails && (
+            <UserTable userDetails={userDetails} />
+          )}
+        </div>
       </div>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-      {loading && <div>Loading...</div>}
-      {error && <div>Error: {error}</div>}
-      {!loading && !error && userDetails && (
-        <UserTable userDetails={userDetails} />
-      )}
     </>
   );
 };

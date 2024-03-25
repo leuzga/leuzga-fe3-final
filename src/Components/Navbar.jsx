@@ -6,21 +6,22 @@ import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
 import iconThemeLight from '../../public/images/eclipse-moon-light.svg';
 import iconThemeDark from '../../public/images/eclipse-moon-dark.svg';
+import './styles/styleNavBar.css';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const { bgNav, botonNav, themeBtn } = getClasses(theme);
+  const { navTheme, bgNav, themeBtn } = getClasses(theme);
 
   return (
-    <nav>
+    <nav className={navTheme}>
       <div className={bgNav}>
         {routes.map(({ path, name }) => {
           if (name !== 'Detail') {
             return (
               <div key={path}>
                 <Link to={path}>
-                  <div className={botonNav}>{name}</div>
+                  <div className='button-nav'>{name}</div>
                 </Link>
               </div>
             );

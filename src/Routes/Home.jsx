@@ -3,6 +3,7 @@ import { useUsersFromApi } from '../Components/utils/Api';
 import Card from '../Components/Card';
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
+import '../Components/styles/styleHome.css';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
   const [favorites, setFavorites] = useState([]);
   const [addedToFavorites, setAddedToFavorites] = useState({});
   const { theme } = useContext(ThemeContext);
-  const { cardContainer } = getClasses(theme);
+  const { detailContent } = getClasses(theme);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -32,28 +33,21 @@ const Home = () => {
         localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
       }
     },
-    [favorites]
+    [favorites, addedToFavorites]
   );
 
-  // const handleAddToFavoritesDisabled = useCallback(
-  //   (user) => {
-  //     return favorites.some((fav) => fav.id === user.id);
-  //   },
-  //   [favorites]
-  // );
-
   return (
-    <main className='content-page-home' style={{ marginTop: '70px' }}>
-      <h1>Home</h1>
-      <h2>Odontologos Disponibles para Citas</h2>
-      <div className='content-page-home'>
-        <div className={cardContainer}>
+    <main style={{ marginTop: '70px' }}>
+      <div className={detailContent}>
+        <h1>Home</h1>
+        <h2>Odontologos Disponibles para Citas</h2>
+        <div className='card-grid'>
           {loading && <div>Loading...</div>}
           {error && <div>Error: {error}</div>}
           {!loading &&
             !error &&
             users.map((user) => (
-              <div key={user.id} className='card-wrapper'>
+              <div key={user.id}>
                 <Card
                   key={user.id}
                   id={user.id}

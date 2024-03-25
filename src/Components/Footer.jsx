@@ -1,8 +1,9 @@
-import logoDH from '../../public/images/DH.png';
-import logofacebook from '../../public/images/ico-facebook.png';
-import logoInstagram from '../../public/images/ico-instagram.png';
-import logoTiktok from '../../public/images/ico-tiktok.png';
-import logoWhatsapp from '../../public/images/ico-whatsapp.png';
+import logoDH from '/images/DH.png';
+import logofacebook from '/images/ico-facebook.png';
+import logoInstagram from '/images/ico-instagram.png';
+import logoTiktok from '/images/ico-tiktok.png';
+import logoWhatsapp from '/images/ico-whatsapp.png';
+import './styles/styleFooter.css';
 const Footer = () => {
   return (
     <footer>
