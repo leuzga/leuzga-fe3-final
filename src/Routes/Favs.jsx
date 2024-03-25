@@ -49,7 +49,11 @@ const Favs = () => {
     <div className='content-page-favs' style={{ marginTop: '70px' }}>
       <h1>Dentists Favorites</h1>
       <nav className='alineaBtn'>
-        <button onClick={handleClearLocalStorage} className='button-favs'>
+        <button
+          onClick={handleClearLocalStorage}
+          className='button-favs'
+          disabled={favorites.length === 0}
+        >
           Clear Favorites
         </button>
       </nav>
@@ -60,7 +64,13 @@ const Favs = () => {
         </p>
       )}
 
-      {loading && <div>Loading...</div>}
+      {loading && (
+        <div>
+          {favorites.length === 0
+            ? 'No hay dentistas favoritos en este momento'
+            : 'Loading...'}
+        </div>
+      )}
       {error && <div>Error: {error}</div>}
       {!loading && !error && (
         <div className='cardContainer'>
