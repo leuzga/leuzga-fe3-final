@@ -4,7 +4,7 @@ import './styles/styleCard.css';
 import { ThemeContext } from '../Contexts/ThemeContext';
 import { getClasses } from '../Components/utils/themeUtils';
 import { Link } from 'react-router-dom';
-
+import Toasty from '../Components/Toasty';
 const Card = ({
   id,
   name,
@@ -30,18 +30,22 @@ const Card = ({
 
   return (
     <div className={cardTheme}>
-      <Link to={`/detail/${id}`}>
-        <div className='card-content'>
-          <div className='card-left'>
-            <img src={`https://i.pravatar.cc/150?u=${username}`} alt={name} />
+      <Toasty
+        message={`Pulse click para redireccionas a Detalles de ... \n${name}`}
+      >
+        <Link to={`/detail/${id}`}>
+          <div className='card-content'>
+            <div className='card-left'>
+              <img src={`https://i.pravatar.cc/150?u=${username}`} alt={name} />
+            </div>
+            <div className='card-right'>
+              <h2 className={h2Theme}>{name.trim()}</h2>
+              <p className={pTheme}>{username}</p>
+              <p className={pTheme}>{website}</p>
+            </div>
           </div>
-          <div className='card-right'>
-            <h2 className={h2Theme}>{name.trim()}</h2>
-            <p className={pTheme}>{username}</p>
-            <p className={pTheme}>{website}</p>
-          </div>
-        </div>
-      </Link>
+        </Link>
+      </Toasty>
       <div className='card-actions'>
         <button
           onClick={
