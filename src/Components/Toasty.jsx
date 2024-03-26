@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import './styles/styleToasty.css';
 
@@ -44,6 +45,11 @@ const Toasty = ({ children, message }) => {
         )}
     </div>
   );
+};
+
+Toasty.propTypes = {
+  children: PropTypes.node,
+  message: PropTypes.string,
 };
 
 export default Toasty;
