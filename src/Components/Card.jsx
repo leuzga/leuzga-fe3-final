@@ -31,7 +31,7 @@ const Card = ({
   return (
     <div className={cardTheme}>
       <Toasty
-        message={`Pulse click para redireccionas a Detalles de ... \n${name}`}
+        message={`Pulse click para redireccionar a Detalles de ... \n${name}`}
       >
         <Link to={`/detail/${id}`}>
           <div className='card-content'>
