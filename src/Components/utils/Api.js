@@ -13,7 +13,7 @@ const userReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        userDetails: action.payload, // Actualiza userDetails con los detalles del usuario
+        userDetails: action.payload,
         error: null,
       };
     case 'FETCH_ERROR':
